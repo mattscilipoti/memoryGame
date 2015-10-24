@@ -1,0 +1,40 @@
+/*reset css start */
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align:baseline;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+/*reset css end */
+
+ table {
+  border-spacing: 20px; /* add spacing between cards*/
+  border-collapse: separate; /* borders are detached*/
+  margin: 0 auto; /* center the cards */
+}
+
+td{
+    position:relative;
+    width: 200px;
+    height: 300px;
+    margin: 20px ;
+    background: blue;
+    border-radius: 50% / 10%; /*creates rounded shape */
+    color: white;
+    text-align: center;
+}
+
+#card1 #card2 #card3 #card4 #card5
+#card6 #card7 #card8
+{
+  background: red;
+}
