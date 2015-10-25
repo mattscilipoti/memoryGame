@@ -1,35 +1,67 @@
-$(document).ready(function() {
-  $("td").click(function(event) {
-      if (checkCounter() == false) { /*stop from clicking more than two*/
-        $(this).css("background", "red")
-        // event.preventDefault() /* blue is default*/
-      }
-      else  if(checkCounter() == true) {
-        function startTimer() {
-          $("td").toggleClass("cards")
-          console.log("startTimer ran")
-        }
-        setTimeout(startTimer, 1000);
+// $(".cards").click(function() {
+// if (clickAmount < 2) {
+//   $(".cards").css("background", "red")
+//         console.log("red ran")
+// event.preventDefault() /* blue is default*/
+//  }
+//       else if(checkCounter ==2) {
+//         function startTimer() {
+//           $(".cards").css("background","blue")
+//           console.log("startTimer ran")
+//   console.log(clickAmount)
+//         }setTimeout(startTimer, 1000);
+//
+//       }
+//
+// })
 
-      }
-  })
-  })
+var clickAmount = 0;
+function flip(){
+$(".cards").on("click", function() {
+  clickAmount = clickAmount + 1
+  $(this).css("background", "red")
+  if (clickAmount == 2) {
+    function startTimer() {
+      $(".cards").css("background", "blue")
+      clickAmount = 0
+    }
+    clearTimeout(startTimer)
+    setTimeout(startTimer, 1000);
 
-
-/* click counter start*/
-var turnsTaken = 0;
-
-// $(".cards").click(function(event){
-//     if (checkCounter()==false) {
-//     alert("turn over")
-//     }
-// });
-
-function checkCounter() {
-  if (turnsTaken == 2) {
-    return true;
   }
-  turnsTaken++;
-  return false;
-}
+  console.log(clickAmount)
+
+});
+} flip()
+
+
+
+
+
+
+
+
+
+
+// function checkCounter() {
+// $(".cards").click(function(){
+//   if (clickAmount == 2) {
+//        return true;
+//
+//     } else {
+//       return false;
+//
+//     }
+//    console.log(clickAmount)
+// })
+// }
+
+// function checkCounter() {
+//   if (turnsAllowed == 2) {
+//     return true;
+//   }
+//   turnsAllowed++;
+//   console.log(turnsAllowed)
+//   return false;
+// }
 /*click counter end*/

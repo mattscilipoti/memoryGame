@@ -33,12 +33,24 @@ td{
     text-align: center;
 }
 .cards{
-  background: blue; 
+  background: blue;
 }
 
 
-#card1 #card2 #card3 #card4 #card5
-#card6 #card7 #card8
+#card1 #card2
 {
   background: red;
+}
+
+#card3 #card4
+{
+  background: purple;
+}
+#card5 #card6
+{
+  background: green;
+}
+
+#card7 #card8{
+  background: yellow; 
 }
