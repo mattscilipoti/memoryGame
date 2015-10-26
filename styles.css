@@ -32,25 +32,6 @@ td{
     color: white;
     text-align: center;
 }
-.cards{
+.cardscover{
   background: blue;
-}
-
-
-#card1 #card2
-{
-  background: red;
-}
-
-#card3 #card4
-{
-  background: purple;
-}
-#card5 #card6
-{
-  background: green;
-}
-
-#card7 #card8{
-  background: yellow; 
 }
