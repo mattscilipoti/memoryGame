@@ -20,37 +20,27 @@ blockquote, q {
   border-spacing: 20px; /* add spacing between cards*/
   border-collapse: separate; /* borders are detached*/
   margin: 0 auto; /* center the cards */
+
 }
-/*main{
-  position: relative;
-}*/
+
 td {
     position:relative;
     width: 130px;
-    height: 300px;
-    margin: 20px ;
-    border-radius: 50% / 10%; /*creates rounded shape */
+    height: 250px;
     color: white;
     text-align: center;
     top: 0;
     left: 0;
-    /*z-index:s 1;*/
+
 }
-/*td.selected{
-  width: 130px;
-  height: 300px;
-  margin: 20px ;
-}*/
+
 
 .cardfront {
-  background-image: url("img/cardback.jpg");
+  background-image: url("img/redcard.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
-  max-width: 100%;
-  height: 300px;
-  margin: 20px ;
-  border-radius: 50% / 10%; /*creates rounded shape */
+  height: 250px;
   color: white;
   text-align: center;
   top: 0;
@@ -60,10 +50,9 @@ td {
 #cardback {
   position:relative;
   width: auto;
-  /*max-height: 200px;*/
   height: 170px;
-  margin: 20px ;
-  border-radius: 50% / 10%; /*creates rounded shape */
+  margin: 10px ;
+  border-radius: 50% / 10%;
   color: white;
   text-align: center;
   top: 0;
