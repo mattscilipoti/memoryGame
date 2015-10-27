@@ -36,17 +36,18 @@ td {
     left: 0;
     /*z-index:s 1;*/
 }
-td.selected{
+/*td.selected{
   width: 130px;
   height: 300px;
   margin: 20px ;
-}
+}*/
 
 .cardfront {
   background-image: url("img/cardback.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 130px;
+  width: 150px;
+  max-width: 100%;
   height: 300px;
   margin: 20px ;
   border-radius: 50% / 10%; /*creates rounded shape */
@@ -58,9 +59,9 @@ td.selected{
 
 #cardback {
   position:relative;
-  width: 130px;
+  width: auto;
   /*max-height: 200px;*/
-  height: 200px;
+  height: 170px;
   margin: 20px ;
   border-radius: 50% / 10%; /*creates rounded shape */
   color: white;
@@ -68,16 +69,4 @@ td.selected{
   top: 0;
   left: 0;
     background-size: contain;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-/*.hidden{
-  display:none;
-}*/
-
-.nothidden{
-  display:block;
 }

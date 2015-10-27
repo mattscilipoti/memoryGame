@@ -7,8 +7,6 @@ var moves = 0;
 
 $(function () {
   $("td").addClass("cardfront")
-  // $("td").css("background-size", 0 0)
-    // $("td").addClass('hidden');
 addColorOrImg();
 
 
@@ -34,7 +32,6 @@ function addColorOrImg(){
   });
 
 }
-// addColorOrImg()
 
 function clickCard(){
   var cardAmount = $("td").length
@@ -45,27 +42,39 @@ function clickCard(){
     // $(this).css("display", "none")
     // $(this).css("background-color", "transparent")
     num++;
-    var cardAttr = $("style.selected").attr("style")
-    var id2 = $(this).attr("style");
-    $(this).addClass("selected") /* need "this" to select indv cells*/
-    $(this).removeClass("cardfront")
+    var card1 = $("td.selected").children().css("background-color")
+    var card2 = $(this).children().css("background-color")
+    console.log(card1)
+    console.log(card2)
+      $(this).addClass("selected") /* need "this" to select indv cells*/
+      $(this).removeClass("cardfront")
     var box = $("td").attr("id")
-    if ($(this).children().css("display")=="none"){
-      $(this).children().css("display", "block")
-    } else {$("td").css("display", "block")}
-    //  $("td>#cardback").css("display", "block")
-      // $("td").css("display") = 'block'
+      if ($(this).children().css("display")=="none"){
+          $(this).children().css("display", "block")
+        } else {$("td").css("display", "block")}
 
+        if (num ==2) {
+          num = 0
 
-    // var showColor = $("#cardback")
-    // $(showColor).show()
-          // if (num ==2) {
-          //   num = 0
-          //
-          // }
+          /*check if there is a match*/
+          if (card1==card2)
+          alert("you found a match!")
+          $("td").css("display","none")
+
+        /*flips card after 1 second*/
+      setTimeout(function(){
+          $("td.selected").addClass("cardfront"),$("td").removeClass("selected")
+          ,$("td").children().css("display", "none")
+        },1000)
+
+      }/* if stmnt end*/
+
   })
 }
 clickCard()
+
+
+
 
 function check(el) {
 
