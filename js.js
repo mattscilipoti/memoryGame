@@ -5,49 +5,82 @@ var imgopened = "";
 var num = 0;
 var moves = 0;
 
+$(function () {
+  $("td").addClass("cardfront")
+  // $("td").css("background-size", 0 0)
+    // $("td").addClass('hidden');
+addColorOrImg();
 
-// $(function () {
-//     $("tr.row td img").addClass('hidden');
-//     addImg();
-//     click();
-//     check();
-//     shuffle();
-// });
+
+});
 
 function randomFromTo(from, to) {
   return Math.floor(Math.random() * (to - from + 1) + from);
 }
 /* randomizes the pick for the cards from the array */
 function addColorOrImg(){
-  var colorOptions = ["red","red","green","green","purple","purple","yellow","yellow"]
+  var colorOptions = ["violet","grey","red","yellow"]
+
   var optionUsed = [];
 /* splice adds and removes options from the array then puts them back in  */
   $("td").each(function(){
         var randomize =  Math.floor(Math.random() * colorOptions.length);
-        $(this).append('<style background="' + colorOptions[randomize] + '"/>');
+        $(this).append('<td style = background:' + colorOptions[randomize] + ' id=cardback'+ '/>');
+        $("td#cardback").hide();
+        // $(this).css("background", colorOptions[randomize]);
         if (optionUsed.indexOf(colorOptions[randomize] ) != -1) colorOptions.splice(randomize, 1);
         else optionUsed.push(colorOptions[randomize] );
-        console.log(colorOptions)
+        // console.log(colorOptions)
   });
 
 }
+// addColorOrImg()
 
 function clickCard(){
   var cardAmount = $("td").length
-  $("td").click(function(){
-    moves++
 
+  $("td").click(function(event){
+    moves++
+    $(".totalmoves").html(moves);
+    // $(this).css("display", "none")
+    // $(this).css("background-color", "transparent")
     num++;
-    var cardAttr = $("td").attr("style")
-    $(this).addClass("selected")
+    var cardAttr = $("style.selected").attr("style")
+    var id2 = $(this).attr("style");
+    $(this).addClass("selected") /* need "this" to select indv cells*/
+    $(this).removeClass("cardfront")
+    var box = $("td").attr("id")
+    if ($(this).children().css("display")=="none"){
+      $(this).children().css("display", "block")
+    } else {$("td").css("display", "block")}
+    //  $("td>#cardback").css("display", "block")
+      // $("td").css("display") = 'block'
+
+
+    // var showColor = $("#cardback")
+    // $(showColor).show()
+          // if (num ==2) {
+          //   num = 0
+          //
+          // }
   })
 }
-
 clickCard()
+
+function check(el) {
+
+    if ($(lastSelected).attr("td") == $(el).find("img").attr("td") && $(lastSelected).hasClass("visible")) {
+        score = 0 + 2;
+        alert("Congradulation! You scored!!" + " " + score + " Points");
+    }
+
+    lastSelected = $(el).find("td");
+    clearAll();
+
+}
 
 
 function shuffleCards(){
-
 }
 
 

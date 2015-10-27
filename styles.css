@@ -21,17 +21,63 @@ blockquote, q {
   border-collapse: separate; /* borders are detached*/
   margin: 0 auto; /* center the cards */
 }
-
-td{
+/*main{
+  position: relative;
+}*/
+td {
     position:relative;
-    width: 200px;
+    width: 130px;
     height: 300px;
     margin: 20px ;
-    background: blue;
     border-radius: 50% / 10%; /*creates rounded shape */
     color: white;
     text-align: center;
+    top: 0;
+    left: 0;
+    /*z-index:s 1;*/
 }
-.cardscover{
-  background: blue;
+td.selected{
+  width: 130px;
+  height: 300px;
+  margin: 20px ;
+}
+
+.cardfront {
+  background-image: url("img/cardback.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 130px;
+  height: 300px;
+  margin: 20px ;
+  border-radius: 50% / 10%; /*creates rounded shape */
+  color: white;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+
+#cardback {
+  position:relative;
+  width: 130px;
+  /*max-height: 200px;*/
+  height: 200px;
+  margin: 20px ;
+  border-radius: 50% / 10%; /*creates rounded shape */
+  color: white;
+  text-align: center;
+  top: 0;
+  left: 0;
+    background-size: contain;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/*.hidden{
+  display:none;
+}*/
+
+.nothidden{
+  display:block;
 }
