@@ -8,8 +8,6 @@ var moves = 0;
 $(function () {
   $("td").addClass("cardfront")
 addColorOrImg();
-
-
 });
 
 function randomFromTo(from, to) {
@@ -84,7 +82,10 @@ function check() {
       alert("you won!")
     }
 }
-
-
 function shuffleCards(){
+}
+
+
+function timerButton() {
+
 }

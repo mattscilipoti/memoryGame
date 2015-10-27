@@ -7,6 +7,11 @@
   font: inherit;
   vertical-align:baseline;
 }
+
+body{
+background: #F0F0F0;
+}
+
 main{
 font-family: "Comic Sans MS", cursive, sans-serif;
 
@@ -30,13 +35,32 @@ p{
 text-align: center;
 }
 
-/*ol, ul {
-	list-style: none;
-}*/
-/*blockquote, q {
-	quotes: none;
-}*/
-/*reset css end */
+.roundButton {
+width: 100px;
+height: 100px;
+border-radius: 50px;
+font-size: 20px;
+background: #000066;
+color: white;
+text-align: center;
+margin: 20px;
+margin-left: 50px;
+/*border:none;*/
+
+background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+}
+button:focus{
+  outline: 0;
+}
+
+a.button:hover{
+  background: #383; 
+}
+
+div{
+  text-align: center;
+  margin: 0 auto;
+}
 
  table {
   border-spacing: 20px; /* add spacing between cards*/
