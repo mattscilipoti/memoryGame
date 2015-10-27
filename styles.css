@@ -7,13 +7,35 @@
   font: inherit;
   vertical-align:baseline;
 }
+main{
+font-family: "Comic Sans MS", cursive, sans-serif;
 
-ol, ul {
+}
+h1  {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+p{
+  font-size: 20px;
+text-align: center;
+}
+
+/*ol, ul {
 	list-style: none;
-}
-blockquote, q {
+}*/
+/*blockquote, q {
 	quotes: none;
-}
+}*/
 /*reset css end */
 
  table {
