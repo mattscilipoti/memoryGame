@@ -10,12 +10,13 @@
 
 body{
 background: #F0F0F0;
+font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-main{
+/*main{
 font-family: "Comic Sans MS", cursive, sans-serif;
 
-}
+}*/
 h1  {
   font-weight: bold;
   font-size: 30px;
@@ -107,4 +108,16 @@ td {
   top: 0;
   left: 0;
     background-size: contain;
+}
+
+.numberbox{
+/*border: 3px solid red;*/
+width: 200px;
+height: 50px;
+margin:0 auto;
+position: relative;
+top: 70px;
+display: block;
+color: blue;
+font-size: 25px;
 }
