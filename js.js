@@ -1,7 +1,5 @@
-// var lastCardSelected;
+
 var score = 0;
-// var boxopened = "";
-// var imgopened = "";
 var num = 0;
 var moves = 0;
 
@@ -10,9 +8,9 @@ $(function () {
 addColorOrImg();
 });
 
-function randomFromTo(from, to) {
-  return Math.floor(Math.random() * (to - from + 1) + from);
-}
+// function randomFromTo(from, to) {
+//   return Math.floor(Math.random() * (to - from + 1) + from);
+// }
 /* randomizes the pick for the cards from the array */
 function addColorOrImg(){
   var colorOptions = ["violet","grey","red","yellow"]
@@ -30,21 +28,20 @@ function addColorOrImg(){
 }
 
 function clickCard(){
-  var cardAmount = $("td").length
+  // var cardAmount = $("td").length
 
   $("td").click(function(event){
     moves++
     $(".totalmoves").html(moves);
-    // $(this).css("display", "none")
-    // $(this).css("background-color", "transparent")
+
     num++;
     var card1 = $("td.selected").children().css("background-color")
     var card2 = $(this).children().css("background-color")
     var click1 = $("td.selected").children()
     var click2 = $(this).children()
 
-      $(this).addClass("selected") /* need "this" to select indv cells*/
-      $(this).removeClass("cardfront")
+        $(this).addClass("selected") /* need "this" to select indv cells*/
+        $(this).removeClass("cardfront")
     var box = $("td").attr("id")
       if ($(this).children().css("display")=="none"){
           $(this).children().css("display", "block")
@@ -86,19 +83,21 @@ function clickCard(){
 }
 clickCard()
 
+/* check if any cards are left*/
 function check() {
     if ($("td.cardfront").length==0){
       alert("you won!")
     }
 }
-// function shuffleCards(){
-// }
+
+/*show score on click and track it*/
 function takeScore() {
   $("#button2").click(function(){
     $(".numberbox").html("score:"+ ' '+score )
 
   })
 
+/* track the score*/
   function changeScore(){
    if (card1==card2){
         score++;
@@ -115,5 +114,5 @@ function takeScore() {
      }
 
 }
-changeScore()
+// changeScore()
 takeScore()

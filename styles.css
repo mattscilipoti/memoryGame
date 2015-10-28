@@ -39,6 +39,7 @@ text-align: center;
   display: block;
   margin: auto;
 }*/
+
 .roundButton {
 width: 100px;
 height: 100px;
@@ -48,7 +49,6 @@ background: #000066;
 color: white;
 text-align: center;
 margin: 20px;
-/*margin-left: 50px;*/
 display: inline-block;
 background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #000099 95%);
 }
