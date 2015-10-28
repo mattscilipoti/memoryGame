@@ -54,7 +54,15 @@ function clickCard(){
           num = 0
 
         /*flips card after 1 second*/
-       if(card1 !== card2) {setTimeout(function(){
+       if(card1 !== card2) {
+        //  score--;
+        //    $(".numberbox").html("score:"+ ' '+score )
+         //
+        //    /* let them know they kinda suck*/
+        //    if (score == -3){
+        //         alert("Seriously tho? try a little harder :-(")
+        //       }
+         setTimeout(function(){
           $("td.selected").addClass("cardfront"),$("td").removeClass("selected")
           ,$("td").children().css("display", "none")
         },500)
@@ -62,6 +70,8 @@ function clickCard(){
 
       /*check if there is a match and remove if true*/
       else if (card1==card2){
+          // score++;
+          // $(".numberbox").html("score:"+ ' '+score )
       alert("you found a match!")
       $("td.selected").remove()
       $("td.selected").children().remove()
@@ -72,7 +82,6 @@ function clickCard(){
 
       }/* if stmnt end*/
 
-
   })
 }
 clickCard()
@@ -82,10 +91,29 @@ function check() {
       alert("you won!")
     }
 }
-function shuffleCards(){
+// function shuffleCards(){
+// }
+function takeScore() {
+  $("#button2").click(function(){
+    $(".numberbox").html("score:"+ ' '+score )
+
+  })
+
+  function changeScore(){
+   if (card1==card2){
+        score++;
+        $(".numberbox").html("score:"+ ' '+score )
+  }
+    if(card1 !== card2){
+        score--;
+        $(".numberbox").html("score:"+ ' '+score )
 }
-
-
-function timerButton() {
+    /* let them know they kinda suck*/
+    if (score == -3){
+         alert("Seriously tho? try a little harder :-(")
+       }
+     }
 
 }
+changeScore()
+takeScore()
