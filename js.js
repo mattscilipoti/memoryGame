@@ -8,9 +8,6 @@ $(function () {
 addColorOrImg();
 });
 
-// function randomFromTo(from, to) {
-//   return Math.floor(Math.random() * (to - from + 1) + from);
-// }
 /* randomizes the pick for the cards from the array */
 function addColorOrImg(){
   var colorOptions = ["violet","grey","red","yellow"]
@@ -52,13 +49,13 @@ function clickCard(){
 
         /*flips card after 1 second*/
        if(card1 !== card2) {
-        //  score--;
-        //    $(".numberbox").html("score:"+ ' '+score )
-         //
-        //    /* let them know they kinda suck*/
-        //    if (score == -3){
-        //         alert("Seriously tho? try a little harder :-(")
-        //       }
+         score--;
+           $(".numberbox").html("score:"+ ' '+score )
+
+           /* let them know they kinda suck*/
+           if (score == -3){
+                alert("Seriously tho? try a little harder :-(")
+              }
          setTimeout(function(){
           $("td.selected").addClass("cardfront"),$("td").removeClass("selected")
           ,$("td").children().css("display", "none")
@@ -67,8 +64,8 @@ function clickCard(){
 
       /*check if there is a match and remove if true*/
       else if (card1==card2){
-          // score++;
-          // $(".numberbox").html("score:"+ ' '+score )
+          score++;
+          $(".numberbox").html("score:"+ ' '+score )
       alert("you found a match!")
       $("td.selected").remove()
       $("td.selected").children().remove()
@@ -95,24 +92,24 @@ function takeScore() {
   $("#button2").click(function(){
     $(".numberbox").html("score:"+ ' '+score )
 
-  })
+          })
 
 /* track the score*/
-  function changeScore(){
-   if (card1==card2){
-        score++;
-        $(".numberbox").html("score:"+ ' '+score )
-  }
-    if(card1 !== card2){
-        score--;
-        $(".numberbox").html("score:"+ ' '+score )
-}
-    /* let them know they kinda suck*/
-    if (score == -3){
-         alert("Seriously tho? try a little harder :-(")
-       }
-     }
+  // function changeScore(){
+  //  if (card1==card2){
+  //       score++;
+  //       $(".numberbox").html("score:"+ ' '+score )
+  //     }
+  //   if(card1 !== card2){
+  //       score--;
+  //       $(".numberbox").html("score:"+ ' '+score )
+  //     }
+  //   /* let them know they kinda suck*/
+  //   if (score == -3){
+  //        alert("Seriously tho? try a little harder :-(")
+  //      }
+  //    }
 
-}
+ }
 // changeScore()
-takeScore()
+ takeScore()
