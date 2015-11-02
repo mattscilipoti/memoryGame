@@ -4,25 +4,60 @@ var num = 0;
 var moves = 0;
 
 $(function () {
-  $("td").addClass("cardfront")
-  addColorOrImg();
+  $("td").addClass("cardfront"); // mms: this adds the class "cardFront" to all existing 'td's.
+  // mms: it would be nice to pass something to addCard, to associate the back with the front
+  addCard();
 });
 
-/* randomizes the pick for the cards from the array */
-function addColorOrImg(){
-  var colorOptions = ["violet","grey","red","yellow"]
+// mms: recommend extracting functions for various functionality.
+// mms: See how this clarifies `addColor` (renamed to addCard)
+// mms: AddColor*Or*Img?
 
-  var optionUsed = [];
-  /* splice adds and removes options from the array then puts them back in  */
-  $("td").each(function(){
-    var randomize =  Math.floor(Math.random() * colorOptions.length);
-    $(this).append('<td style = background:' + colorOptions[randomize] + ' id=cardback'+ '/>');
-    $("td#cardback").hide();
-    if (optionUsed.indexOf(colorOptions[randomize] ) != -1) colorOptions.splice(randomize, 1);
-    else optionUsed.push(colorOptions[randomize] );
+// /* randomizes the pick for the cards from the array */
+// function addColorOrImg(){
+//   var colorOptions = ["violet","grey","red","yellow"]
+//
+//   var optionUsed = [];
+//   /* splice adds and removes options from the array then puts them back in  */
+//   $("td").each(function(){
+//     var randomize =  Math.floor(Math.random() * colorOptions.length);
+//     $(this).append('<td style = background:' + colorOptions[randomize] + ' id=cardback'+ '/>');
+//     $("td#cardback").hide();
+//     if (optionUsed.indexOf(colorOptions[randomize] ) != -1) colorOptions.splice(randomize, 1);
+//     else optionUsed.push(colorOptions[randomize] );
+//   });
+//
+// }
+
+var usedColors = [];
+$("td").each(function(index, cardContainer){
+  addCard(cardContainer);
+});
+
+function addCard(cardContainer){
+  randomColor = randomUnusedColor(usedColors);
+  usedColors.push(randomColor); // save to ensure no duplicates
+  // add card with the selected random color
+  // mms: how does every cardback have the same id?
+  var newCardBack = $('<td style = background:' + randomColor + ' id=cardback'+ '/>');
+  $(cardContainer).append(newCardBack);
+  // Hide the new cardback
+  newCardBack.hide();
+}
+
+// mms: all the randomization complexity hides in randomUnusedColor
+// mms: which we can replace with any helpful library and not change addCard.
+function randomUnusedColor(usedColors){
+  var colorOptions = ["violet","grey","red","yellow"];
+  // subtract used from original
+  availableColors = colorOptions.filter( function( color ) {
+    return usedColors.indexOf( color ) < 0;
   });
 
+  var randomize =  Math.floor(Math.random() * availableColors.length);
+  return availableColors[randomize];
 }
+
 
 function clickCard(){
   // var cardAmount = $("td").length
