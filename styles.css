@@ -9,8 +9,8 @@
 }
 
 body{
-background: #F0F0F0;
-font-family: "Comic Sans MS", cursive, sans-serif;
+  background: #F0F0F0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 /*main{
@@ -33,24 +33,24 @@ h2{
 
 p{
   font-size: 20px;
-text-align: center;
+  text-align: center;
 }
 /*button{
-  display: block;
-  margin: auto;
+display: block;
+margin: auto;
 }*/
 
 .roundButton {
-width: 100px;
-height: 100px;
-border-radius: 50px;
-font-size: 20px;
-background: #000066;
-color: white;
-text-align: center;
-margin: 20px;
-display: inline-block;
-background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #000099 95%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  font-size: 20px;
+  background: #000066;
+  color: white;
+  text-align: center;
+  margin: 20px;
+  display: inline-block;
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #000099 95%);
 }
 
 button:focus{
@@ -66,7 +66,7 @@ button:hover{
   clear: both;
 }
 
- table {
+table {
   border-spacing: 20px; /* add spacing between cards*/
   border-collapse: separate; /* borders are detached*/
   margin: 0 auto; /* center the cards */
@@ -74,13 +74,13 @@ button:hover{
 }
 
 td {
-    position:relative;
-    width: 130px;
-    height: 250px;
-    color: white;
-    text-align: center;
-    top: 0;
-    left: 0;
+  position:relative;
+  width: 130px;
+  height: 250px;
+  color: white;
+  text-align: center;
+  top: 0;
+  left: 0;
 
 }
 
@@ -107,17 +107,17 @@ td {
   text-align: center;
   top: 0;
   left: 0;
-    background-size: contain;
+  background-size: contain;
 }
 
 .numberbox{
-/*border: 3px solid red;*/
-width: 200px;
-height: 50px;
-margin:0 auto;
-position: relative;
-top: 70px;
-display: block;
-color: blue;
-font-size: 25px;
+  /*border: 3px solid red;*/
+  width: 200px;
+  height: 50px;
+  margin:0 auto;
+  position: relative;
+  top: 70px;
+  display: block;
+  color: blue;
+  font-size: 25px;
 }
